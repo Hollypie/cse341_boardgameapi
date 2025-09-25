@@ -8,7 +8,7 @@ const gamesController = require('../controllers/games');
  * @group Games
  * @returns {object[]} 200 - An array of games
  */
-router.get('/', gamesController.getAll);
+router.get('/', gamesController.getAllGames);
 
 /**
  * @route GET /games/{id}
@@ -18,7 +18,7 @@ router.get('/', gamesController.getAll);
  * @returns {object} 200 - A single game
  * @returns {Error} 404 - Game not found
  */
-router.get('/:id', gamesController.getSingle);
+router.get('/:id', gamesController.getSingleGame);
 
 /**
  * @route POST /games

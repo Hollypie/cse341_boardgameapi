@@ -8,7 +8,8 @@
     "playTime": 60,
     "complexity": "Medium",
     "genre": "Wargame, Scenario-based",
-    "description": "A historical WWII board game where players reenact battles using miniatures and terrain maps."
+    "description": "A historical WWII board game where players reenact battles using miniatures and terrain maps.",
+    "reviews": []
   },
   {
     "title": "Undaunted: Normandy",
@@ -19,7 +20,8 @@
     "playTime": 45,
     "complexity": "Medium",
     "genre": "Deck-building, Wargame",
-    "description": "A deck-building game set in WWII Normandy where players command squads of soldiers."
+    "description": "A deck-building game set in WWII Normandy where players command squads of soldiers.",
+    "reviews": []
   },
   {
     "title": "Villainous",
@@ -30,7 +32,8 @@
     "playTime": 60,
     "complexity": "Medium",
     "genre": "Asymmetric, Strategy",
-    "description": "Players take on the roles of Disney villains, each with unique objectives and abilities."
+    "description": "Players take on the roles of Disney villains, each with unique objectives and abilities.",
+    "reviews": []
   },
   {
     "title": "Everdell",
@@ -41,7 +44,8 @@
     "playTime": 80,
     "complexity": "Medium",
     "genre": "Worker Placement, Card Game",
-    "description": "Build a woodland city of critters and constructions through worker placement and tableau building."
+    "description": "Build a woodland city of critters and constructions through worker placement and tableau building.",
+    "reviews": []
   },
   {
     "title": "Flamecraft",
@@ -52,7 +56,8 @@
     "playTime": 60,
     "complexity": "Light-Medium",
     "genre": "Resource Management, Fantasy",
-    "description": "Players are Flamekeepers who assign artisan dragons to shops to earn reputation and craft goods."
+    "description": "Players are Flamekeepers who assign artisan dragons to shops to earn reputation and craft goods.",
+    "reviews": []
   },
   {
     "title": "Lords of Waterdeep",
@@ -63,7 +68,8 @@
     "playTime": 90,
     "complexity": "Medium",
     "genre": "Worker Placement, Strategy",
-    "description": "Secret rulers of Waterdeep recruit adventurers to complete quests and expand their influence."
+    "description": "Secret rulers of Waterdeep recruit adventurers to complete quests and expand their influence.",
+    "reviews": []
   },
   {
     "title": "Battleship",
@@ -74,7 +80,8 @@
     "playTime": 30,
     "complexity": "Light",
     "genre": "Deduction, Abstract",
-    "description": "A two-player guessing game where players try to sink each other’s fleet of ships."
+    "description": "A two-player guessing game where players try to sink each other’s fleet of ships.",
+    "reviews": []
   },
   {
     "title": "Clue",
@@ -85,7 +92,8 @@
     "playTime": 45,
     "complexity": "Light",
     "genre": "Deduction, Murder Mystery",
-    "description": "Solve the murder by deducing the killer, weapon, and room through elimination."
+    "description": "Solve the murder by deducing the killer, weapon, and room through elimination.",
+    "reviews": []
   },
   {
     "title": "Haunted Mansion: Call of the Spirits",
@@ -96,7 +104,8 @@
     "playTime": 45,
     "complexity": "Light",
     "genre": "Family, Set Collection",
-    "description": "Players explore Disney’s Haunted Mansion, collecting ghost cards while avoiding the Hitchhiking Ghosts."
+    "description": "Players explore Disney’s Haunted Mansion, collecting ghost cards while avoiding the Hitchhiking Ghosts.",
+    "reviews": []
   },
   {
     "title": "Skip-Bo",
@@ -107,7 +116,8 @@
     "playTime": 30,
     "complexity": "Light",
     "genre": "Card Game, Family",
-    "description": "A sequencing card game where players aim to play all cards from their stockpile."
+    "description": "A sequencing card game where players aim to play all cards from their stockpile.",
+    "reviews": []
   },
   {
     "title": "Skull King",
@@ -118,7 +128,8 @@
     "playTime": 30,
     "complexity": "Light",
     "genre": "Trick-taking, Pirates",
-    "description": "A trick-taking game with pirates, mermaids, and predictions that earn or lose points."
+    "description": "A trick-taking game with pirates, mermaids, and predictions that earn or lose points.",
+    "reviews": []
   },
   {
     "title": "Forbidden Island",
@@ -129,7 +140,8 @@
     "playTime": 30,
     "complexity": "Light-Medium",
     "genre": "Cooperative, Adventure",
-    "description": "Players work together to recover treasures from a sinking island before it’s lost to the sea."
+    "description": "Players work together to recover treasures from a sinking island before it’s lost to the sea.",
+    "reviews": []
   },
   {
     "title": "Ghost Fightin' Treasure Hunters",
@@ -140,6 +152,7 @@
     "playTime": 45,
     "complexity": "Light",
     "genre": "Cooperative, Family",
-    "description": "Players team up to recover gems from a haunted house while fending off ghosts."
+    "description": "Players team up to recover gems from a haunted house while fending off ghosts.",
+    "reviews": []
   }
 ]

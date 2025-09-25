@@ -1,0 +1,108 @@
+W03 Project: Project 2 Part 1 (CRUD Operations)
+Overview
+Purpose: Start developing a new API and gain experience performing CRUD operations.
+
+Project Description
+For Weeks 03-04, you will create a new project of your choosing. You will have two weeks in this course to complete it, just like the last project. This project will perform CRUD operations on a MongoDB database, be published to the Web, incorporate security measures, and include API documentation.
+
+Overall Requirements (Due at the end of Week 04)
+The overall requirements for this project (to be completed in Week 04) are:
+
+Be sure to review the rubric in Canvas to see how you will be graded on this assignment.
+The database should store at least two collections.
+At least one collection should store documents that have 7 fields or more.
+The Node project successfully connects to MongoDB.
+API routes perform GET, POST, PUT, DELETE requests that are fully functional.
+All routes should include data validation and error handling.
+Project must incorporate use of OAuth for user management.
+API Documentation is professional, comprehensive, relevant, and accurate
+API is published to Render and can be called from external sources
+Create a 5 to 8 minute video that goes through the items in Rubrics. Upload it to YouTube. Videos longer than the alloted time will receive a zero and will be asked to resubmit.
+Submit the following links in Canvas: GitHub repo, Render site, and YouTube video.
+Part 1 requirements (Due at the end of Week 03)
+To help you make progress toward finishing this project, for this week's assignment you need to complete the Create, Retrieve, Update, and Delete (CRUD) operations with validation and error handling.
+
+Then, in Week 04 you will finish the project by adding authentication.
+
+Start the Project
+Complete the following to get started:
+
+Create a new Node.js project.
+You'll use the same MongoDB cluster/account, but you should create a new database for this project. (When you connect to MongoDB Compass, you connect to your account, and your list of databases shows up in the bottom left corner.)
+Create your first REST API routes (similar to what we did with the routes and controllers folders in your previous, Contacts project). You will need both GET and POST requests for this assignment.
+Add Documentation and Publish your API
+Complete the following:
+
+Create API documentation for these two routes and test them.
+Create a new Render project.
+Be sure to create an env file for your local MongoDB credentials, and add config vars to your Render project. Your MongoDB credentials should never get pushed to git, so be sure to include your env file in your gitignore.
+Add Update and Delete Functionality and Validation
+Complete the following:
+
+Add PUT and DELETE routes to your API. Verify in MongoDB that these work as intended.
+Add validation to your routes.
+Add error handling to your routes.
+Be sure to update your API documentation to include all of your routes.
+Prepare for Submission
+Complete the following:
+
+Push to GitHub.
+Publish to Render.
+Create a brief video demonstrating the functionality of your assignment. Upload it to YouTube (public or unlisted).
+Submit GitHub, Render, and YouTube links in Canvas.
+Be sure to review the rubric in Canvas to see how you will be graded on this assignment.
+Submission
+When you have finished the assignment:
+
+Return to Canvas to submit.
+Other Links:
+
+
+W04 Project: Project 2 Part 2 (Authentication)
+Overview
+Purpose: Implement an authentication system for your project.
+
+Learning Objectives
+By the end of this assignment you will be able to do the following:
+
+Be sure to review the rubric in Canvas to see how you will be graded on this assignment.
+Deploy Node.js API to the web
+Incorporate authentication system with OAuth into Node.js application
+Host GET, POST, PUT and DELETE endpoints in application
+Produce API documentation that allows API testing
+Validate all data before processing API requests
+Handle errors in application
+The demonstration of OAuth and validation restricting endpoints.
+Create a 5 to 8 minute video that goes through the items in Rubrics. Upload it to YouTube. Videos longer than the alloted time will receive a zero and will be asked to resubmit.
+Submit the following links in Canvas: GitHub repo, Render site, and YouTube video.
+Project Description
+Finish Project 2 that you started last week. You should already have all of your routes set up with documentation, validation, error handling, and so on. Now, you will also add security using OAuth.
+
+Please be sure to review the Week 03 Project instructions for overall project requirements.
+
+Add Login Functionality
+Add security measures to your project using OAuth as follows:
+
+The user should be able to create an account, log in and log out successfully, and view things that aren't available if they are not logged in.
+If you store user credentials in MongoDB, be sure to use bcrypt (or a package of your choosing) to hash passwords so no plain-text passwords are ever stored in the database.
+Be sure your Swagger documentation is accurate, including all of your security measures (and routes that have been effected by these measures).
+The following video may be helpful:
+
+Direct link: https://video.byui.edu/media/t/1_al422bex
+
+
+Prepare for Submission
+Push any changes to GitHub and verify changes in Render.
+Record a brief video demonstration that shows you using the Swagger documentation successfully sending requests to each route. Also include evidence that your MongoDB cluster is being updated.
+Post this video to YouTube (public or unlisted are both fine, whatever you prefer).
+Submit the following links in Canvas (Your assignment will receive a zero if these three links are not included)
+GitHub repo
+Render site API Contracts (it should be formatted like this: https://cse341-code-student.onrender.com//api-docs)
+YouTube video
+Submission
+When you have completed this assignment:
+
+Return to Canvas to submit.
+Other Links:
+
+Return to: Week Overview | Course Home

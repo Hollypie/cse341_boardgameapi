@@ -2,7 +2,7 @@ const mongodb = require('../data/database');
 const { ObjectId } = require('mongodb');
 
 // GET all games
-const getAll = async (req, res) => {
+const getAllGames = async (req, res) => {
   try {
     const games = await mongodb.getDb().collection('games').find().toArray();
     res.status(200).json(games);
@@ -12,7 +12,7 @@ const getAll = async (req, res) => {
 };
 
 // GET a single game by ID
-const getSingle = async (req, res) => {
+const getSingleGame = async (req, res) => {
   try {
     let gameId;
     try {
@@ -104,8 +104,8 @@ const deleteGame = async (req, res) => {
 };
 
 module.exports = {
-  getAll,
-  getSingle,
+  getAllGames,
+  getSingleGame,
   createGame,
   updateGame,
   deleteGame

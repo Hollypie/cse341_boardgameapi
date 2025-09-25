@@ -1,0 +1,17 @@
+[
+  {
+    "username": "hollypie",
+    "email": "holly@example.com",
+    "reviews": ["review1", "review4"]
+  },
+  {
+    "username": "ollie",
+    "email": "ollie@example.com",
+    "reviews": ["review2", "review5"]
+  },
+  {
+    "username": "sarah",
+    "email": "sarah@example.com",
+    "reviews": ["review3"]
+  }
+]
