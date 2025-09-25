@@ -1,0 +1,47 @@
+### Get all games
+GET https://project3-c5z2.onrender.com/games
+
+### Create a new game
+POST https://project3-c5z2.onrender.com/games
+Content-Type: application/json
+
+{
+    "title": "Ticket to Ride",
+    "publisher": "Days of Wonder",
+    "yearPublished": 2004,
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "playTime": 60,
+    "complexity": "Light-Medium",
+    "genre": "Strategy, Route-Building",
+    "description": "Players collect train cards to claim railway routes across a map, connecting cities and completing destination tickets for points."
+}
+
+
+### Get a single game
+GET https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f714629
+
+### Get a single game
+GET https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f71462a
+
+### Get a single game
+GET https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f71462b
+
+### Update a Game
+PUT https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f714632
+Content-Type: application/json
+
+{
+    "title": "Ticket to Ride",
+    "publisher": "Days of Wonder",
+    "yearPublished": 2004,
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "playTime": 60,
+    "complexity": "Light-Medium",
+    "genre": "Strategy, Route-Building",
+    "description": "Players collect train cards to claim railway routes across a map, connecting cities and completing destination tickets for points."
+}
+
+### Delete a Game
+DELETE https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f714635 HTTP/1.1
