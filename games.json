@@ -1,0 +1,145 @@
+[
+  {
+    "title": "Memoir '44",
+    "publisher": "Days of Wonder",
+    "yearPublished": 2004,
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "playTime": 60,
+    "complexity": "Medium",
+    "genre": "Wargame, Scenario-based",
+    "description": "A historical WWII board game where players reenact battles using miniatures and terrain maps."
+  },
+  {
+    "title": "Undaunted: Normandy",
+    "publisher": "Osprey Games",
+    "yearPublished": 2019,
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "playTime": 45,
+    "complexity": "Medium",
+    "genre": "Deck-building, Wargame",
+    "description": "A deck-building game set in WWII Normandy where players command squads of soldiers."
+  },
+  {
+    "title": "Villainous",
+    "publisher": "Ravensburger",
+    "yearPublished": 2018,
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "playTime": 60,
+    "complexity": "Medium",
+    "genre": "Asymmetric, Strategy",
+    "description": "Players take on the roles of Disney villains, each with unique objectives and abilities."
+  },
+  {
+    "title": "Everdell",
+    "publisher": "Starling Games",
+    "yearPublished": 2018,
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "playTime": 80,
+    "complexity": "Medium",
+    "genre": "Worker Placement, Card Game",
+    "description": "Build a woodland city of critters and constructions through worker placement and tableau building."
+  },
+  {
+    "title": "Flamecraft",
+    "publisher": "Cardboard Alchemy",
+    "yearPublished": 2022,
+    "minPlayers": 1,
+    "maxPlayers": 5,
+    "playTime": 60,
+    "complexity": "Light-Medium",
+    "genre": "Resource Management, Fantasy",
+    "description": "Players are Flamekeepers who assign artisan dragons to shops to earn reputation and craft goods."
+  },
+  {
+    "title": "Lords of Waterdeep",
+    "publisher": "Wizards of the Coast",
+    "yearPublished": 2012,
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "playTime": 90,
+    "complexity": "Medium",
+    "genre": "Worker Placement, Strategy",
+    "description": "Secret rulers of Waterdeep recruit adventurers to complete quests and expand their influence."
+  },
+  {
+    "title": "Battleship",
+    "publisher": "Milton Bradley (Hasbro)",
+    "yearPublished": 1967,
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "playTime": 30,
+    "complexity": "Light",
+    "genre": "Deduction, Abstract",
+    "description": "A two-player guessing game where players try to sink each other’s fleet of ships."
+  },
+  {
+    "title": "Clue",
+    "publisher": "Hasbro",
+    "yearPublished": 1949,
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "playTime": 45,
+    "complexity": "Light",
+    "genre": "Deduction, Murder Mystery",
+    "description": "Solve the murder by deducing the killer, weapon, and room through elimination."
+  },
+  {
+    "title": "Haunted Mansion: Call of the Spirits",
+    "publisher": "Funko Games",
+    "yearPublished": 2020,
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "playTime": 45,
+    "complexity": "Light",
+    "genre": "Family, Set Collection",
+    "description": "Players explore Disney’s Haunted Mansion, collecting ghost cards while avoiding the Hitchhiking Ghosts."
+  },
+  {
+    "title": "Skip-Bo",
+    "publisher": "Mattel",
+    "yearPublished": 1967,
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "playTime": 30,
+    "complexity": "Light",
+    "genre": "Card Game, Family",
+    "description": "A sequencing card game where players aim to play all cards from their stockpile."
+  },
+  {
+    "title": "Skull King",
+    "publisher": "Grandpa Beck's Games",
+    "yearPublished": 2013,
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "playTime": 30,
+    "complexity": "Light",
+    "genre": "Trick-taking, Pirates",
+    "description": "A trick-taking game with pirates, mermaids, and predictions that earn or lose points."
+  },
+  {
+    "title": "Forbidden Island",
+    "publisher": "Gamewright",
+    "yearPublished": 2010,
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "playTime": 30,
+    "complexity": "Light-Medium",
+    "genre": "Cooperative, Adventure",
+    "description": "Players work together to recover treasures from a sinking island before it’s lost to the sea."
+  },
+  {
+    "title": "Ghost Fightin' Treasure Hunters",
+    "publisher": "Mattel",
+    "yearPublished": 2013,
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "playTime": 45,
+    "complexity": "Light",
+    "genre": "Cooperative, Family",
+    "description": "Players team up to recover gems from a haunted house while fending off ghosts."
+  }
+]
