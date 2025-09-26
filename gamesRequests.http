@@ -1,8 +1,8 @@
 ### Get all games
-GET https://project3-c5z2.onrender.com/games
+GET https://cse341-boardgameapi.onrender.com/games
 
 ### Create a new game
-POST https://project3-c5z2.onrender.com/games
+POST https://cse341-boardgameapi.onrender.com/games
 Content-Type: application/json
 
 {
@@ -19,29 +19,29 @@ Content-Type: application/json
 
 
 ### Get a single game
-GET https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f714629
+GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714637
 
 ### Get a single game
-GET https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f71462a
+GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714638
 
 ### Get a single game
-GET https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f71462b
+GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714639
 
 ### Update a Game
-PUT https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f714632
+PUT https://cse341-boardgameapi.onrender.com/games/68d61bed12748fa297b37ec0
 Content-Type: application/json
 
 {
-    "title": "Ticket to Ride",
+    "title": "Ticket to Ride Europe",
     "publisher": "Days of Wonder",
     "yearPublished": 2004,
     "minPlayers": 2,
     "maxPlayers": 5,
     "playTime": 60,
     "complexity": "Light-Medium",
-    "genre": "Strategy, Route-Building",
+    "genre": "Strategy, Route-Building, Train themed",
     "description": "Players collect train cards to claim railway routes across a map, connecting cities and completing destination tickets for points."
 }
 
 ### Delete a Game
-DELETE https://project3-c5z2.onrender.com/games/68d4a1249abd2a312f714635 HTTP/1.1
+DELETE https://cse341-boardgameapi.onrender.com/games/68d61b0c12748fa297b37ebf HTTP/1.1

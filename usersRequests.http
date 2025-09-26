@@ -1,0 +1,27 @@
+### Get all users
+GET https://project3-c5z2.onrender.com/users
+
+### Create a new game
+POST https://project3-c5z2.onrender.com/users
+Content-Type: application/json
+
+{
+    "username": "Skott",
+    "email": "proskott@gmail.com"
+}
+
+
+### Get a single user
+GET https://project3-c5z2.onrender.com/users/68d539f99abd2a312f714646
+
+### Update a User
+PUT https://project3-c5z2.onrender.com/users/68d539f99abd2a312f714647
+Content-Type: application/json
+
+{
+    "username": "Oliver",
+    "email": "oliver@gmail.com"
+}
+
+### Delete a Game
+DELETE https://project3-c5z2.onrender.com/games/68d539f99abd2a312f714648 HTTP/1.1
