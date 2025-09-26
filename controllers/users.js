@@ -67,19 +67,33 @@ const updateUser = async (req, res) => {
       return res.status(400).json({ message: 'Username and email are required.' });
     }
 
-    const user = { username, email, reviews: Array.isArray(reviews) ? reviews : []  };
+    const updateDoc = {
+        $set: {
+            username,
+            email,
+            ...(reviews ? { reviews: Array.isArray(reviews) ? reviews : [] } : {})
+        }
+    };
 
-    const response = await mongodb.getDb().collection('users').replaceOne({ _id: userId }, user);
+    const response = await mongodb.getDb()
+        .collection('users')
+        .updateOne({ _id: userId }, updateDoc);
+
+    console.log("Updating user:", userId);
+    console.log("UpdateDoc:", JSON.stringify(updateDoc, null, 2));
 
     if (response.matchedCount === 0) {
-      res.status(200).send();
-    } else {
-      res.status(404).json({ message: 'User not found or nothing to update.' });
+        return res.status(404).json({ message: 'User not found.' });
     }
+
+    return res.status(200).json({ message: 'User updated successfully.' });
+
   } catch (err) {
     res.status(500).json({ message: err.message || 'Unexpected error.' });
   }
 };
+
+
 
 // DELETE a user
 const deleteUser = async (req, res) => {
