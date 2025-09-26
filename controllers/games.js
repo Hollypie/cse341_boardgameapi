@@ -67,15 +67,33 @@ const updateGame = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required.' });
     }
 
-    const game = { title, publisher, yearPublished, minPlayers, maxPlayers, playTime, complexity, genre, description };
+    const updateDoc = {
+        $set: {
+            title,
+            publisher,
+            yearPublished,
+            minPlayers,
+            maxPlayers,
+            playTime,
+            complexity,
+            genre,
+            description
+        }
+    };
 
-    const response = await mongodb.getDb().collection('games').replaceOne({ _id: gameId }, game);
+    const response = await mongodb.getDb()
+        .collection('games')
+        .updateOne({ _id: gameId }, updateDoc);
+
+    console.log("Updating game:", gameId);
+    console.log("UpdateDoc:", JSON.stringify(updateDoc, null, 2));
 
     if (response.matchedCount === 0) {
-      res.status(204).send();
-    } else {
-      res.status(404).json({ message: 'Game not found or nothing to update.' });
+        return res.status(404).json({ message: 'Game not found.' });
     }
+
+    return res.status(200).json({ message: 'Game updated successfully.' });
+
   } catch (err) {
     res.status(500).json({ message: err.message || 'Unexpected error.' });
   }

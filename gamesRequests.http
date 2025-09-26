@@ -28,11 +28,11 @@ GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714638
 GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714639
 
 ### Update a Game
-PUT https://cse341-boardgameapi.onrender.com/games/68d61bed12748fa297b37ec0
+PUT https://cse341-boardgameapi.onrender.com/games/68d678a026f1607d09bc28af
 Content-Type: application/json
 
 {
-    "title": "Ticket to Ride Europe",
+    "title": "Ticket to Ride",
     "publisher": "Days of Wonder",
     "yearPublished": 2004,
     "minPlayers": 2,
