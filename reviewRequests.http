@@ -14,10 +14,10 @@ Content-Type: application/json
 
 
 ### Get a single review
-GET https://cse341-boardgameapi.onrender.com/reviews/68d539a09abd2a312f714637
+GET https://cse341-boardgameapi.onrender.com/reviews/68d53b299abd2a312f71464f
 
 ### Update a review
-PUT https://cse341-boardgameapi.onrender.com/reviews/68d678a026f1607d09bc28af
+PUT https://cse341-boardgameapi.onrender.com/reviews/68d680ac77f084f66bcaae9c
 Content-Type: application/json
 
 {
@@ -28,4 +28,4 @@ Content-Type: application/json
 }
 
 ### Delete a review
-DELETE https://cse341-boardgameapi.onrender.com/reviews/68d61b0c12748fa297b37ebf HTTP/1.1
+DELETE https://cse341-boardgameapi.onrender.com/reviews/68d6807277f084f66bcaae9b HTTP/1.1
