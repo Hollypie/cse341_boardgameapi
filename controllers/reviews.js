@@ -33,12 +33,12 @@ const getSingleReview = async (req, res) => {
 // CREATE a new review
 const createReview = async (req, res) => {
   try {
-    const { userId, gameId, rating, comment, createdAt } = req.body;
-    if (!userId || !gameId || !rating || !comment || !createdAt) {
+    const { userId, gameId, rating, comment } = req.body;
+    if (!userId || !gameId || !rating || !comment) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
 
-    const review = { userId, gameId, rating, comment, createdAt };
+    const review = { userId, gameId, rating, comment };
 
     const response = await mongodb.getDb().collection('reviews').insertOne(review);
 
@@ -62,12 +62,12 @@ const updateReview = async (req, res) => {
       return res.status(400).json({ message: 'Invalid review ID format.' });
     }
 
-    const { userId, gameId, rating, comment, createdAt } = req.body;
-    if (!userId || !gameId || !rating || !comment || !createdAt) {
+    const { userId, gameId, rating, comment } = req.body;
+    if (!userId || !gameId || !rating || !comment) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
 
-    const review = { userId, gameId, rating, comment, createdAt };
+    const review = { userId, gameId, rating, comment };
 
     const response = await mongodb.getDb().collection('reviews').replaceOne({ _id: reviewId }, review);
 

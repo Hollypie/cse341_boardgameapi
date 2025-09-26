@@ -1,5 +1,7 @@
 const express = require('express');
-const mongodb = require('./db/connect');
+const mongodb = require('./data/database');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 const port = process.env.PORT || 8080;
 
 const app = express();
@@ -15,6 +17,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/', require('./routes'));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Global error handler for uncaught exceptions
 process.on('uncaughtException', (err, origin) => {
