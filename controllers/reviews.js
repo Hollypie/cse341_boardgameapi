@@ -67,15 +67,28 @@ const updateReview = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required.' });
     }
 
-    const review = { userId, gameId, rating, comment };
+    const updateDoc = {
+        $set: {
+            userId,
+            gameId,
+            rating,
+            comment
+        }
+    };
 
-    const response = await mongodb.getDb().collection('reviews').replaceOne({ _id: reviewId }, review);
+    const response = await mongodb.getDb()
+        .collection('reviews')
+        .updateOne({ _id: reviewId }, updateDoc);
+
+    console.log("Updating review:", reviewId);
+    console.log("UpdateDoc:", JSON.stringify(updateDoc, null, 2));
 
     if (response.matchedCount === 0) {
-      res.status(204).send();
-    } else {
-      res.status(404).json({ message: 'Review not found or nothing to update.' });
+        return res.status(404).json({ message: 'Review not found.' });
     }
+
+    return res.status(200).json({ message: 'Review updated successfully.' });
+
   } catch (err) {
     res.status(500).json({ message: err.message || 'Unexpected error.' });
   }

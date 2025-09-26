@@ -32,7 +32,7 @@ PUT https://cse341-boardgameapi.onrender.com/games/68d678a026f1607d09bc28af
 Content-Type: application/json
 
 {
-    "title": "Ticket to Ride",
+    "title": "Ticket to Ride Europe",
     "publisher": "Days of Wonder",
     "yearPublished": 2004,
     "minPlayers": 2,

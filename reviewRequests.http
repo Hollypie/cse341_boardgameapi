@@ -1,0 +1,31 @@
+### Get all reviews
+GET https://cse341-boardgameapi.onrender.com/reviews
+
+### Create a new review
+POST https://cse341-boardgameapi.onrender.com/reviews
+Content-Type: application/json
+
+{
+    "userId": "68d539f99abd2a312f714648",
+    "gameId": "68d539a09abd2a312f71463e",
+    "rating": 2,
+    "comment": "an old classic, nostalgic but lacking",
+}
+
+
+### Get a single review
+GET https://cse341-boardgameapi.onrender.com/reviews/68d539a09abd2a312f714637
+
+### Update a review
+PUT https://cse341-boardgameapi.onrender.com/reviews/68d678a026f1607d09bc28af
+Content-Type: application/json
+
+{
+    "userId": "68d539f99abd2a312f714648",
+    "gameId": "68d539a09abd2a312f71463e",
+    "rating": 5,
+    "comment": "I love this old game",
+}
+
+### Delete a review
+DELETE https://cse341-boardgameapi.onrender.com/reviews/68d61b0c12748fa297b37ebf HTTP/1.1
