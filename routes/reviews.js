@@ -3,6 +3,7 @@ const router = express.Router();
 const reviewsController = require('../controllers/reviews');
 const { createReviewRules, updateReviewRules, reviewIdParamRules } = require('../middlewear/reviews.js');
 const { validate } = require('../middlewear/validator.js');
+const mongodb = require('../data/database');
 
 /**
  * @route GET /reviews
