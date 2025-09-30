@@ -5,10 +5,10 @@
     "description": "CSE 341 Weeks 3 and 4 assignment",
     "version": "1.0.0"
   },
-  "host": "",
+  "host": "cse341-boardgameapi.onrender.com",
   "basePath": "/",
   "schemes": [
-    ""
+    "https"
   ],
   "paths": {
     "/": {
