@@ -5,8 +5,8 @@ const doc = {
     title: 'Board Game API',
     description: 'CSE 341 Weeks 3 and 4 assignment'
   },
-  host: 'cse341-boardgameapi.onrender.com',
-  schemes: ['https']
+  host: '',
+  schemes: ['']
 };
 
 const outputFile = './swagger.json';
