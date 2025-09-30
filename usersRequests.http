@@ -15,7 +15,7 @@ Content-Type: application/json
 GET https://cse341-boardgameapi.onrender.com/users/68d539f99abd2a312f714646
 
 ### Update a User
-PUT https://cse341-boardgameapi.onrender.com/users/68d66d872532f9a1f8e3f5e7
+PUT https://cse341-boardgameapi.onrender.com/users/68d7185822a76e0126870a57
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 
 ### Delete a Game
-DELETE https://cse341-boardgameapi.onrender.com/users/68d66df42532f9a1f8e3f5e9 
+DELETE https://cse341-boardgameapi.onrender.com/users/68d71eb2e971281f0da44aa1 

@@ -28,7 +28,7 @@ GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714638
 GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714639
 
 ### Update a Game
-PUT https://cse341-boardgameapi.onrender.com/games/68d678a026f1607d09bc28af
+PUT https://cse341-boardgameapi.onrender.com/games/68d71e61e971281f0da44aa0
 Content-Type: application/json
 
 {
@@ -44,4 +44,4 @@ Content-Type: application/json
 }
 
 ### Delete a Game
-DELETE https://cse341-boardgameapi.onrender.com/games/68d61b0c12748fa297b37ebf HTTP/1.1
+DELETE https://cse341-boardgameapi.onrender.com/games/68d71e61e971281f0da44aa0 HTTP/1.1
