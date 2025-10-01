@@ -3,6 +3,8 @@ const router = express.Router();
 const usersController = require('../controllers/users');
 const { createUserRules, updateUserRules, userIdParamRules } = require('../middlewear/users.js');
 const { validate } = require('../middlewear/validator.js');
+const { isAuthenticated } = require('../middlewear/authenticate.js');
+
 
 /**
  * @route GET /users
@@ -33,7 +35,7 @@ router.get('/:id', userIdParamRules(), validate, usersController.getSingleUser);
  * @returns {object} 201 - The created user
  * @returns {Error} 400 - Missing required fields
  */
-router.post('/', createUserRules(), validate, usersController.createUser);
+router.post('/', isAuthenticated, createUserRules(), validate, usersController.createUser);
 
 /**
  * @route PUT /users/{id}
@@ -48,7 +50,7 @@ router.post('/', createUserRules(), validate, usersController.createUser);
  * @returns {Error} 400 - Invalid ID or missing fields
  * @returns {Error} 404 - User not found
  */
-router.put('/:id', userIdParamRules(), updateUserRules(), validate, usersController.updateUser);
+router.put('/:id', isAuthenticated, userIdParamRules(), updateUserRules(), validate, usersController.updateUser);
 
 /**
  * @route DELETE /users/{id}
@@ -59,6 +61,6 @@ router.put('/:id', userIdParamRules(), updateUserRules(), validate, usersControl
  * @returns {Error} 400 - Invalid ID
  * @returns {Error} 404 - User not found
  */
-router.delete('/:id', userIdParamRules(), validate, usersController.deleteUser);
+router.delete('/:id', isAuthenticated, userIdParamRules(), validate, usersController.deleteUser);
 
 module.exports = router;

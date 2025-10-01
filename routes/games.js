@@ -3,6 +3,7 @@ const router = express.Router();
 const gamesController = require('../controllers/games');
 const { createGameRules, updateGameRules, gameIdParamRules } = require('../middlewear/games.js');
 const { validate } = require('../middlewear/validator.js');
+const { isAuthenticated } = require('../middlewear/authenticate.js');
 
 /**
  * @route GET /games
@@ -39,7 +40,7 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
  * @returns {object} 201 - The created game
  * @returns {Error} 400 - Missing required fields
  */
-router.post('/', createGameRules(), validate, gamesController.createGame);
+router.post('/', isAuthenticated, createGameRules(), validate, gamesController.createGame);
 
 /**
  * @route PUT /games/{id}
@@ -60,7 +61,7 @@ router.post('/', createGameRules(), validate, gamesController.createGame);
  * @returns {Error} 400 - Invalid ID or missing fields
  * @returns {Error} 404 - Game not found
  */
-router.put('/:id', gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
+router.put('/:id', isAuthenticated, gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
 
 /**
  * @route DELETE /games/{id}
@@ -71,6 +72,6 @@ router.put('/:id', gameIdParamRules(), updateGameRules(), validate, gamesControl
  * @returns {Error} 400 - Invalid ID
  * @returns {Error} 404 - Game not found
  */
-router.delete('/:id', gameIdParamRules(), validate, gamesController.deleteGame);
+router.delete('/:id', isAuthenticated, gameIdParamRules(), validate, gamesController.deleteGame);
 
 module.exports = router;
