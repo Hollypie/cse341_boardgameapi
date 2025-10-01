@@ -76,6 +76,17 @@ app.get('/swagger.json', (req, res) => {
 // ROUTES
 // ============================================
 
+// Swagger debug route
+app.get('/swagger-debug', (req, res) => {
+  delete require.cache[require.resolve('./swagger.json')];
+  const doc = require('./swagger.json');
+  res.json({
+    host: doc.host,
+    schemes: doc.schemes,
+    basePath: doc.basePath
+  });
+});
+
 // Root route
 app.get('/', (req, res) => { 
   res.send(req.session.user !== undefined 
