@@ -4,6 +4,7 @@ GET https://cse341-boardgameapi.onrender.com/games
 ### Create a new game
 POST https://cse341-boardgameapi.onrender.com/games
 Content-Type: application/json
+Accept: application/json
 
 {
     "title": "Ticket to Drive",
@@ -27,8 +28,9 @@ GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714638
 GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714639
 
 ### Update a Game
-PUT https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714642
+PUT https://cse341-boardgameapi.onrender.com/games/68deb9e81aa3d12b25c117b5
 Content-Type: application/json
+Accept: application/json
 
 {
     "title": "Ticket to Ride Europe",
@@ -43,4 +45,4 @@ Content-Type: application/json
 }
 
 ### Delete a Game
-DELETE https://cse341-boardgameapi.onrender.com/games/68d61b0c12748fa297b37ebf HTTP/1.1
+DELETE https://cse341-boardgameapi.onrender.com/games/68debad41aa3d12b25c117b6
