@@ -1,7 +1,7 @@
 const express = require('express');
 const mongodb = require('./data/database');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const swaggerDocument = require('./swagger_output.json');
 const cors = require('cors');
 const port = process.env.PORT || 8080;
 
