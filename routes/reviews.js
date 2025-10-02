@@ -10,7 +10,25 @@ const { validate } = require('../middlewear/validator.js');
  * @group Reviews
  * @returns {object[]} 200 - An array of reviews
  */
-router.get('/', reviewsController.getAllReviews);
+router.get('/', async (req, res) => {
+  console.log('GET /reviews called');
+
+  try {
+    const db = mongodb.getDb();
+    if (!db) {
+      console.error('MongoDB not initialized yet');
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
+    const reviews = await db.collection('reviews').find().toArray();
+    console.log(`Fetched ${reviews.length} reviews`);
+
+    return res.status(200).json(reviews);
+  } catch (err) {
+    console.error('Error fetching reviews:', err);
+    return res.status(500).json({ message: err.message || 'Unexpected error' });
+  }
+});
 
 /**
  * @route GET /reviews/{id}
