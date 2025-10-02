@@ -12,11 +12,9 @@ app.use((req, res, next) => {
   next();
 });
 
-
 // Middleware
 app.use(cors());
 app.use(express.json()); // built-in body parser
-
 
 // Routes
 app.use('/', require('./routes'));
