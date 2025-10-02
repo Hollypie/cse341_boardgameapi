@@ -4,73 +4,48 @@ const gamesController = require('../controllers/games');
 const { createGameRules, updateGameRules, gameIdParamRules } = require('../middlewear/games.js');
 const { validate } = require('../middlewear/validator.js');
 
-/**
- * @route GET /games
- * @summary Get all games
- * @group Games
- * @returns {object[]} 200 - An array of games
- */
+// GET all games
+// #swagger.tags = ['Games']
+// #swagger.description = 'Get all games.'
 router.get('/', gamesController.getAllGames);
 
-/**
- * @route GET /games/{id}
- * @summary Get a single game by ID
- * @group Games
- * @param {string} id.path.required - Game ID
- * @returns {object} 200 - A single game
- * @returns {Error} 404 - Game not found
- */
+// GET single game by ID
+// #swagger.tags = ['Games']
+// #swagger.description = 'Get a single game by its ID.'
+// #swagger.parameters['id'] = { description: 'Game ID', required: true, type: 'string' }
 router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 
-/**
- * @route POST /games
- * @summary Create a new game
- * @group Games
- * @param {object} request.body.required - Game info
- * @param {string} request.body.title.required
- * @param {string} request.body.publisher.required
- * @param {number} request.body.yearPublished.required
- * @param {number} request.body.minPlayers.required
- * @param {number} request.body.maxPlayers.required
- * @param {number} request.body.playTime.required
- * @param {string} request.body.complexity.required
- * @param {string} request.body.genre.required
- * @param {string} request.body.description.required
- * @returns {object} 201 - Created game
- * @returns {Error} 400 - Missing required fields
- */
+// POST create a new game
+// #swagger.tags = ['Games']
+// #swagger.description = 'Create a new game.'
+// #swagger.parameters['body'] = {
+//     in: 'body',
+//     description: 'Game information',
+//     required: true,
+//     schema: { $ref: "#/definitions/Game" }
+// }
+// #swagger.responses[201] = {
+//     description: 'Game created successfully',
+//     schema: { $ref: "#/definitions/Game" }
+// }
 router.post('/', createGameRules(), validate, gamesController.createGame);
 
-/**
- * @route PUT /games/{id}
- * @summary Update a game by ID
- * @group Games
- * @param {string} id.path.required - Game ID
- * @param {object} request.body.required - Game info to update
- * @param {string} request.body.title.required
- * @param {string} request.body.publisher.required
- * @param {number} request.body.yearPublished.required
- * @param {number} request.body.minPlayers.required
- * @param {number} request.body.maxPlayers.required
- * @param {number} request.body.playTime.required
- * @param {string} request.body.complexity.required
- * @param {string} request.body.genre.required
- * @param {string} request.body.description.required
- * @returns {object} 200 - Updated game
- * @returns {Error} 400 - Invalid ID or missing fields
- * @returns {Error} 404 - Game not found
- */
+// PUT update a game
+// #swagger.tags = ['Games']
+// #swagger.description = 'Update an existing game.'
+// #swagger.parameters['id'] = { description: 'Game ID', required: true, type: 'string' }
+// #swagger.parameters['body'] = {
+//     in: 'body',
+//     description: 'Updated game info',
+//     required: true,
+//     schema: { $ref: "#/definitions/Game" }
+// }
 router.put('/:id', gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
 
-/**
- * @route DELETE /games/{id}
- * @summary Delete a game by ID
- * @group Games
- * @param {string} id.path.required - Game ID
- * @returns {string} 200 - Success message
- * @returns {Error} 400 - Invalid ID
- * @returns {Error} 404 - Game not found
- */
+// DELETE a game
+// #swagger.tags = ['Games']
+// #swagger.description = 'Delete a game by ID.'
+// #swagger.parameters['id'] = { description: 'Game ID', required: true, type: 'string' }
 router.delete('/:id', gameIdParamRules(), validate, gamesController.deleteGame);
 
 module.exports = router;
