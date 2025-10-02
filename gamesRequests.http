@@ -6,7 +6,7 @@ POST https://cse341-boardgameapi.onrender.com/games
 Content-Type: application/json
 
 {
-    "title": "Ticket to Ride",
+    "title": "Ticket to Drive",
     "publisher": "Days of Wonder",
     "yearPublished": 2004,
     "minPlayers": 2,
@@ -16,7 +16,6 @@ Content-Type: application/json
     "genre": "Strategy, Route-Building",
     "description": "Players collect train cards to claim railway routes across a map, connecting cities and completing destination tickets for points."
 }
-
 
 ### Get a single game
 GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714637
@@ -28,7 +27,7 @@ GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714638
 GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714639
 
 ### Update a Game
-PUT https://cse341-boardgameapi.onrender.com/games/68d678a026f1607d09bc28af
+PUT https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714642
 Content-Type: application/json
 
 {

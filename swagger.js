@@ -5,8 +5,9 @@ const doc = {
     title: 'Board Game API',
     description: 'CSE 341 Weeks 3 and 4 assignment',
   },
-  host: process.env.HOST || 'localhost:8080',
-  schemes: process.env.SCHEMES ? process.env.SCHEMES.split(',') : ['http'],
+  // Use your Render production URL here
+  host: 'cse341-boardgameapi.onrender.com',
+  schemes: ['https'], // since Render uses HTTPS
 };
 
 const outputFile = './swagger.json';
