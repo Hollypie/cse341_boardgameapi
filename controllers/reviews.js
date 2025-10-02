@@ -4,10 +4,17 @@ const { ObjectId } = require('mongodb');
 // GET all reviews
 const getAllReviews = async (req, res) => {
   try {
-    const reviews = await mongodb.getDb().collection('reviews').find().toArray();
+    console.log('GET /reviews triggered');
+    const db = mongodb.getDb();
+    console.log('DB:', !!db);
+
+    const reviews = await db.collection('reviews').find().toArray();
+    console.log('Reviews count:', reviews.length);
+
     res.status(200).json(reviews);
   } catch (err) {
-    res.status(500).json({ message: 'Fetching reviews failed.' });
+    console.error('Error in getAllReviews:', err);
+    res.status(500).json({ message: err.message || 'Fetching reviews failed.' });
   }
 };
 
