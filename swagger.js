@@ -1,7 +1,12 @@
 const swaggerAutogen = require('swagger-autogen')();
 
-const outputFile = './swagger_output.json'; // where swagger-autogen will save the generated JSON
-const endpointsFiles = ['./routes/games.js', './routes/users.js', './routes/reviews.js']; // all route files
+const outputFile = './swagger_output.json';
+const endpointsFiles = [
+  './routes/games.js',
+  './routes/users.js',
+  './routes/reviews.js',
+  './routes/index.js'
+];
 
 const doc = {
   info: {
@@ -20,8 +25,8 @@ const doc = {
       playTime: 60,
       complexity: 'Medium',
       genre: 'Wargame, Scenario-based',
-      description: 'A historical WWII board game where players reenact battles using miniatures and terrain maps.',
-      reviews: ['68d53b299abd2a312f71464f']
+      description: 'A historical WWII board game.',
+      reviews: []
     },
     User: {
       username: 'holly',
@@ -37,10 +42,6 @@ const doc = {
   }
 };
 
-swaggerAutogen(outputFile, endpointsFiles, doc)
-  .then(() => {
-    console.log('Swagger documentation generated successfully!');
-    // optionally, you can start your server here if you like
-    // require('./server.js');
-  })
-  .catch(err => console.error('Error generating swagger docs:', err));
+swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
+  console.log('Swagger documentation generated successfully!');
+});
