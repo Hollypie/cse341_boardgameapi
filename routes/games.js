@@ -36,7 +36,7 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
  * @param {string} request.body.complexity.required
  * @param {string} request.body.genre.required
  * @param {string} request.body.description.required
- * @returns {object} 201 - The created game
+ * @returns {object} 201 - Created game
  * @returns {Error} 400 - Missing required fields
  */
 router.post('/', createGameRules(), validate, gamesController.createGame);
