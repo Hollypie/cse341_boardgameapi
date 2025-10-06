@@ -57,8 +57,8 @@ router.post(
 
     next(); // continue to validation AFTER logging all fields
   },
-  createGameRules(),
-  validate,
+//   createGameRules(),
+//   validate,
   gamesController.createGame
 ); 
 
