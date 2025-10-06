@@ -79,7 +79,7 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
  */
 router.post(
   '/',
-  // requireAuth, // Uncomment if authentication is needed
+  requireAuth,
   (req, res, next) => {
     console.log('--- Incoming POST /games body ---');
     console.log(req.body);
