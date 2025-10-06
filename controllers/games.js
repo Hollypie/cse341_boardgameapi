@@ -33,14 +33,34 @@ const getSingleGame = async (req, res) => {
 // CREATE a new game
 const createGame = async (req, res) => {
   try {
-    const { title, publisher, yearPublished, minPlayers, maxPlayers, playTime, complexity, genre, description } = req.body;
-    if (!title || !publisher || !yearPublished || !minPlayers || !maxPlayers || !playTime || !complexity || !genre || !description) {
-      return res.status(400).json({ message: 'All fields are required.' });
-    }
+    const {
+      title,
+      publisher,
+      yearPublished,
+      minPlayers,
+      maxPlayers,
+      playTime,
+      complexity,
+      genre,
+      description
+    } = req.body;
 
-    const game = { title, publisher, yearPublished, minPlayers, maxPlayers, playTime, complexity, genre, description };
+    // Convert numeric fields
+    const game = {
+      title,
+      publisher,
+      yearPublished: Number(yearPublished),
+      minPlayers: Number(minPlayers),
+      maxPlayers: Number(maxPlayers),
+      playTime: Number(playTime),
+      complexity,
+      genre,
+      description
+    };
 
-    const response = await mongodb.getDb().collection('games').insertOne(game);
+    const response = await mongodb.getDb()
+      .collection('games')
+      .insertOne(game);
 
     if (response.acknowledged) {
       res.status(201).json({ id: response.insertedId });
@@ -68,17 +88,17 @@ const updateGame = async (req, res) => {
     }
 
     const updateDoc = {
-        $set: {
-            title,
-            publisher,
-            yearPublished,
-            minPlayers,
-            maxPlayers,
-            playTime,
-            complexity,
-            genre,
-            description
-        }
+      $set: {
+        title,
+        publisher,
+        yearPublished: Number(yearPublished),
+        minPlayers: Number(minPlayers),
+        maxPlayers: Number(maxPlayers),
+        playTime: Number(playTime),
+        complexity,
+        genre,
+        description
+      }
     };
 
     const response = await mongodb.getDb()

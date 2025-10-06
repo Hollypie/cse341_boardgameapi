@@ -148,9 +148,6 @@
           "201": {
             "description": "Created"
           },
-          "400": {
-            "description": "Bad Request"
-          },
           "422": {
             "description": "Unprocessable Entity"
           },
