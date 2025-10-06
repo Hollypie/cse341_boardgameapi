@@ -60,9 +60,9 @@ const sessionConfig = {
     sameSite: 'lax',
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
-  },
   proxy: true,
 };
+
 
 console.log('📦 Session Config:', {
   hasSecret: !!sessionConfig.secret,
