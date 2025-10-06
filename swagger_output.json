@@ -788,27 +788,27 @@
       "properties": {
         "title": {
           "type": "string",
-          "example": "Memoir '44"
+          "example": "Test Game"
         },
         "publisher": {
           "type": "string",
-          "example": "Days of Wonder"
+          "example": "Test Publisher"
         },
         "yearPublished": {
           "type": "number",
-          "example": 2004
+          "example": 2025
         },
         "minPlayers": {
           "type": "number",
-          "example": 2
+          "example": 1
         },
         "maxPlayers": {
           "type": "number",
-          "example": 2
+          "example": 4
         },
         "playTime": {
           "type": "number",
-          "example": 60
+          "example": 30
         },
         "complexity": {
           "type": "string",
@@ -816,16 +816,11 @@
         },
         "genre": {
           "type": "string",
-          "example": "Wargame, Scenario-based"
+          "example": "Strategy"
         },
         "description": {
           "type": "string",
-          "example": "A historical WWII board game."
-        },
-        "reviews": {
-          "type": "array",
-          "example": [],
-          "items": {}
+          "example": "A sample game for testing."
         }
       }
     },

@@ -21,17 +21,16 @@ const doc = {
     }
   ],
   definitions: {
-        Game: {
-      title: 'Memoir \'44',
-      publisher: 'Days of Wonder',
-      yearPublished: 2004,
-      minPlayers: 2,
-      maxPlayers: 2,
-      playTime: 60,
-      complexity: 'Medium', // string, not number
-      genre: 'Wargame, Scenario-based',
-      description: 'A historical WWII board game.',
-      reviews: [],
+    Game: {
+      title: "Test Game",
+      publisher: "Test Publisher",
+      yearPublished: 2025,
+      minPlayers: 1,
+      maxPlayers: 4,
+      playTime: 30,
+      complexity: "Medium",
+      genre: "Strategy",
+      description: "A sample game for testing."
     },
     User: {
       username: 'holly',
