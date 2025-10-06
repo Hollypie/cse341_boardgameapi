@@ -1,7 +1,7 @@
 const swaggerAutogen = require('swagger-autogen')();
 
 const outputFile = './swagger_output.json';
-const endpointsFiles = ['./routes/index.js', './server.js'];
+const endpointsFiles = ['./routes/index.js', './auth.js', './reviews.js', './users.js', './games.js'];
 
 const doc = {
   info: {
@@ -21,17 +21,17 @@ const doc = {
     }
   ],
   definitions: {
-    Game: {
+        Game: {
       title: 'Memoir \'44',
       publisher: 'Days of Wonder',
       yearPublished: 2004,
       minPlayers: 2,
       maxPlayers: 2,
       playTime: 60,
-      complexity: 'Medium',
+      complexity: 'Medium', // string, not number
       genre: 'Wargame, Scenario-based',
       description: 'A historical WWII board game.',
-      reviews: []
+      reviews: [],
     },
     User: {
       username: 'holly',

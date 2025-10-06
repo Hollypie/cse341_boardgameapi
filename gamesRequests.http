@@ -1,13 +1,21 @@
 ### Get all games
 GET https://cse341-boardgameapi.onrender.com/games
+Cookie: connect.sid=s%3ARsCcU1Q1PHZHKmyVy3mIOpaVkTGv7_Ij.z7CSWaemuLQyB08A2FYFNhpN3mPmfi38mAK9nc49XO4
+Accept: application/json
+
+### Get a single game
+GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714637
+Cookie: connect.sid=s%3ARsCcU1Q1PHZHKmyVy3mIOpaVkTGv7_Ij.z7CSWaemuLQyB08A2FYFNhpN3mPmfi38mAK9nc49XO4
+Accept: application/json
 
 ### Create a new game
 POST https://cse341-boardgameapi.onrender.com/games
 Content-Type: application/json
 Accept: application/json
+Cookie: connect.sid=s%3ARsCcU1Q1PHZHKmyVy3mIOpaVkTGv7_Ij.z7CSWaemuLQyB08A2FYFNhpN3mPmfi38mAK9nc49XO4
 
 {
-    "title": "Ticket to Drive",
+    "title": "Monopoly",
     "publisher": "Days of Wonder",
     "yearPublished": 2004,
     "minPlayers": 2,
@@ -18,19 +26,11 @@ Accept: application/json
     "description": "Players collect train cards to claim railway routes across a map, connecting cities and completing destination tickets for points."
 }
 
-### Get a single game
-GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714637
-
-### Get a single game
-GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714638
-
-### Get a single game
-GET https://cse341-boardgameapi.onrender.com/games/68d539a09abd2a312f714639
-
-### Update a Game
+### Update a game
 PUT https://cse341-boardgameapi.onrender.com/games/68deb9e81aa3d12b25c117b5
 Content-Type: application/json
 Accept: application/json
+Cookie: connect.sid=s%3ARsCcU1Q1PHZHKmyVy3mIOpaVkTGv7_Ij.z7CSWaemuLQyB08A2FYFNhpN3mPmfi38mAK9nc49XO4
 
 {
     "title": "Ticket to Ride Europe",
@@ -44,5 +44,7 @@ Accept: application/json
     "description": "Players collect train cards to claim railway routes across a map, connecting cities and completing destination tickets for points."
 }
 
-### Delete a Game
+### Delete a game
 DELETE https://cse341-boardgameapi.onrender.com/games/68debad41aa3d12b25c117b6
+Cookie: connect.sid=s%3ARsCcU1Q1PHZHKmyVy3mIOpaVkTGv7_Ij.z7CSWaemuLQyB08A2FYFNhpN3mPmfi38mAK9nc49XO4
+Accept: application/json

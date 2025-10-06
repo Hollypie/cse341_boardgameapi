@@ -55,10 +55,11 @@ const sessionConfig = {
     ttl: 14 * 24 * 60 * 60,
   }),
   cookie: {
-    secure: true, // Render always uses HTTPS
+    secure: true,
     httpOnly: true,
     sameSite: 'lax',
     maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
   },
   proxy: true,
 };
