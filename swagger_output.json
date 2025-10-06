@@ -151,12 +151,6 @@
           "400": {
             "description": "Bad Request"
           },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "422": {
-            "description": "Unprocessable Entity"
-          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -788,27 +782,27 @@
       "properties": {
         "title": {
           "type": "string",
-          "example": "Test Game"
+          "example": "Memoir '44"
         },
         "publisher": {
           "type": "string",
-          "example": "Test Publisher"
+          "example": "Days of Wonder"
         },
         "yearPublished": {
           "type": "number",
-          "example": 2025
+          "example": 2004
         },
         "minPlayers": {
           "type": "number",
-          "example": 1
+          "example": 2
         },
         "maxPlayers": {
           "type": "number",
-          "example": 4
+          "example": 2
         },
         "playTime": {
           "type": "number",
-          "example": 30
+          "example": 60
         },
         "complexity": {
           "type": "string",
@@ -816,11 +810,16 @@
         },
         "genre": {
           "type": "string",
-          "example": "Strategy"
+          "example": "Wargame, Scenario-based"
         },
         "description": {
           "type": "string",
-          "example": "A sample game for testing."
+          "example": "A historical WWII board game."
+        },
+        "reviews": {
+          "type": "array",
+          "example": [],
+          "items": {}
         }
       }
     },

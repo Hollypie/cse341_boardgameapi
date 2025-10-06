@@ -1,7 +1,13 @@
 const swaggerAutogen = require('swagger-autogen')();
 
 const outputFile = './swagger_output.json';
-const endpointsFiles = ['./routes/index.js', './routes/auth.js', './routes/reviews.js', './routes/users.js', './routes/games.js'];
+const endpointsFiles = [
+  './routes/index.js',
+  './routes/auth.js',
+  './routes/reviews.js',
+  './routes/users.js',
+  './routes/games.js'
+];
 
 const doc = {
   info: {
@@ -22,15 +28,16 @@ const doc = {
   ],
   definitions: {
     Game: {
-      title: "Test Game",
-      publisher: "Test Publisher",
-      yearPublished: 2025,
-      minPlayers: 1,
-      maxPlayers: 4,
-      playTime: 30,
-      complexity: "Medium",
-      genre: "Strategy",
-      description: "A sample game for testing."
+      title: 'Memoir \'44',                // string
+      publisher: 'Days of Wonder',         // string
+      yearPublished: 2004,                 // number
+      minPlayers: 2,                       // number
+      maxPlayers: 2,                       // number
+      playTime: 60,                        // number
+      complexity: 'Medium',                // string
+      genre: 'Wargame, Scenario-based',    // string
+      description: 'A historical WWII board game.', // string
+      reviews: []                           // array
     },
     User: {
       username: 'holly',
