@@ -151,6 +151,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
