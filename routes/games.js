@@ -43,7 +43,7 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 // #swagger.responses[201] = { description: 'Game created successfully', schema: { $ref: "#/definitions/Game" } }
 // #swagger.responses[400] = { description: 'Missing required fields' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.post('/', requireAuth(), createGameRules(), validate, gamesController.createGame);
+router.post('/', requireAuth, createGameRules(), validate, gamesController.createGame);
 
 /**
  * PUT update a game by ID
@@ -61,7 +61,7 @@ router.post('/', requireAuth(), createGameRules(), validate, gamesController.cre
 // #swagger.responses[400] = { description: 'Invalid ID or missing fields' }
 // #swagger.responses[404] = { description: 'Game not found' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.put('/:id', requireAuth(), gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
+router.put('/:id', requireAuth, gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
 
 /**
  * DELETE a game by ID
@@ -73,6 +73,6 @@ router.put('/:id', requireAuth(), gameIdParamRules(), updateGameRules(), validat
 // #swagger.responses[404] = { description: 'Game not found' }
 // #swagger.responses[400] = { description: 'Invalid ID format' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.delete('/:id', requireAuth(), gameIdParamRules(), validate, gamesController.deleteGame);
+router.delete('/:id', requireAuth, gameIdParamRules(), validate, gamesController.deleteGame);
 
 module.exports = router;

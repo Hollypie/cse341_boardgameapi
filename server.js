@@ -6,6 +6,7 @@ const cors = require('cors');
 const passport = require('passport');
 const session = require('express-session');
 const { Strategy: GoogleStrategy } = require('passport-google-oauth20');
+const MongoStore = require('connect-mongo');
 require('dotenv').config();
 const port = process.env.PORT || 8080;
 
@@ -21,12 +22,22 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json()); // built-in body parser
 
-// Session setup (simple in-memory for class; use connect-mongo for production)
+// Session setup 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'dev-secret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URL, 
+      collectionName: 'sessions',
+      ttl: 14 * 24 * 60 * 60, // 14 days
+    }),
+    cookie: {
+      secure: process.env.NODE_ENV === 'production',
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+    },
   })
 );
 

@@ -34,7 +34,7 @@ router.get('/:id', userIdParamRules(), validate, usersController.getSingleUser);
  * @returns {object} 201 - The created user
  * @returns {Error} 400 - Missing required fields
  */
-router.post('/', requireAuth(), createUserRules(), validate, usersController.createUser);
+router.post('/', requireAuth, createUserRules(), validate, usersController.createUser);
 
 /**
  * @route PUT /users/{id}
@@ -49,7 +49,7 @@ router.post('/', requireAuth(), createUserRules(), validate, usersController.cre
  * @returns {Error} 400 - Invalid ID or missing fields
  * @returns {Error} 404 - User not found
  */
-router.put('/:id', requireAuth(), userIdParamRules(), updateUserRules(), validate, usersController.updateUser);
+router.put('/:id', requireAuth, userIdParamRules(), updateUserRules(), validate, usersController.updateUser);
 
 /**
  * @route DELETE /users/{id}
@@ -60,6 +60,6 @@ router.put('/:id', requireAuth(), userIdParamRules(), updateUserRules(), validat
  * @returns {Error} 400 - Invalid ID
  * @returns {Error} 404 - User not found
  */
-router.delete('/:id', requireAuth(), userIdParamRules(), validate, usersController.deleteUser);
+router.delete('/:id', requireAuth, userIdParamRules(), validate, usersController.deleteUser);
 
 module.exports = router;
