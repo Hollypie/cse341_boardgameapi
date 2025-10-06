@@ -29,32 +29,27 @@ router.get('/', gamesController.getAllGames);
 // #swagger.responses[500] = { description: 'Internal server error' }
 router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 
-/**
- * POST create a new game
- */
 // #swagger.tags = ['Games']
 // #swagger.description = 'Create a new game.'
 // #swagger.parameters['body'] = {
 //     in: 'body',
 //     description: 'Game information',
 //     required: true,
-//     schema: { $ref: "#/definitions/Game" },
+//     schema: { 
+//         $ref: "#/definitions/Game" 
+//     },
 //     example: {
 //         title: "Test Game",
 //         publisher: "Test Publisher",
-//         yearPublished: 2025,
-//         minPlayers: 1,
-//         maxPlayers: 4,
-//         playTime: 30,
+//         yearPublished: 2025,      // number
+//         minPlayers: 1,            // number
+//         maxPlayers: 4,            // number
+//         playTime: 30,             // number
 //         complexity: "Medium",
 //         genre: "Strategy",
 //         description: "A sample game for testing."
 //     }
 // }
-// #swagger.responses[201] = { description: 'Game created successfully', schema: { $ref: "#/definitions/Game" } }
-// #swagger.responses[400] = { description: 'Missing required fields' }
-// #swagger.responses[422] = { description: 'Invalid input data' }
-// #swagger.responses[500] = { description: 'Internal server error' }
 router.post(
   '/',
   // requireAuth, // Uncomment if authentication is needed
