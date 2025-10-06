@@ -119,20 +119,13 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // --- AUTHENTICATION ROUTES ---
 
 // Login route
-
-/**
- * @swagger
- * /login:
- *   get:
- *     tags:
- *       - Authentication
- *     summary: Initiates Google OAuth login
- *     description: Redirects the user to Google's OAuth consent screen to log in.
- *     responses:
- *       302:
- *         description: Redirects to Google OAuth consent screen
- */
 app.get('/login', (req, res, next) => {
+  // #swagger.tags = ['Authentication']
+  // #swagger.summary = 'Initiate Google OAuth login'
+  // #swagger.description = 'Redirects user to Google OAuth consent screen'
+  /* #swagger.responses[302] = {
+    description: 'Redirects to Google for authentication'
+  } */
   console.log('🔐 /login route hit - initiating Google OAuth');
   passport.authenticate('google', { 
     scope: ['profile', 'email']
@@ -140,19 +133,6 @@ app.get('/login', (req, res, next) => {
 });
 
 // OAuth callback route
-
-/**
- * @swagger
- * /auth/google/callback:
- *   get:
- *     tags:
- *       - Authentication
- *     summary: Google OAuth callback
- *     description: Handles the OAuth callback from Google. If successful, the user is logged in and redirected to /secrets. If failed, redirects to /login-failure.
- *     responses:
- *       302:
- *         description: Redirects to /secrets on success, or /login-failure on failure
- */
 app.get(
   '/auth/google/callback',
   (req, res, next) => {
@@ -219,25 +199,18 @@ app.get('/login-failure', (req, res) => {
 });
 
 // Logout route
-
-/**
- * @swagger
- * /logout:
- *   get:
- *     tags:
- *       - Authentication
- *     summary: Logs out the current user
- *     description: Destroys the session and clears cookies.
- *     responses:
- *       200:
- *         description: Successfully logged out
- *         content:
- *           text/html:
- *             schema:
- *               type: string
- *               example: "<h1>Logged Out</h1><p>Goodbye, Holly Briggs!</p><p><a href='/login'>Log in again</a></p>"
- */
 app.get('/logout', (req, res, next) => {
+  // #swagger.tags = ['Authentication']
+  // #swagger.summary = 'Logout current user'
+  // #swagger.description = 'Destroys session and logs out the user'
+  /* #swagger.responses[200] = {
+    description: 'Successfully logged out',
+    content: {
+      "text/html": {
+        schema: { type: "string" }
+      }
+    }
+  } */
   console.log('👋 Logout initiated');
   const username = req.user?.displayName;
   req.logout((err) => {
