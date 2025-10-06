@@ -71,41 +71,44 @@ app.use('/', require('./routes'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-// --- AUTH ROUTES ---
-app.get(
-  '/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+// --- AUTHENTICATION ROUTES ---
 
+app.get('/login', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+// OAuth callback route
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', {
-    successRedirect: '/secrets',
-    failureRedirect: '/login-failure',
+    successRedirect: '/secrets',     // Protected page after successful login
+    failureRedirect: '/login-failure', 
   })
 );
 
+// Protected test route
 app.get('/secrets', (req, res) => {
   if (req.isAuthenticated()) {
-    res.send('✅ Logged in! Welcome, ' + req.user.displayName);
+    res.status(200).send(`✅ Logged in! Welcome, ${req.user.displayName}`);
   } else {
-    res.status(401).send('🚫 Not authenticated');
+    res.status(401).send('🚫 Not authenticated. Please log in.');
   }
 });
 
+// Login failure route
 app.get('/login-failure', (req, res) => {
-  res.send('Login failed');
+  res.status(401).send('⚠️ Login failed. Try again.');
 });
 
-app.get('/logout', (req, res) => {
+// Logout route
+app.get('/logout', (req, res, next) => {
   req.logout(err => {
-    if (err) console.error(err);
+    if (err) return next(err);
     req.session.destroy(() => {
       res.clearCookie('connect.sid');
-      res.send('You have been logged out.');
+      res.status(200).send('You have been logged out.');
     });
   });
 });
+
 
 // Global error handler for uncaught exceptions
 process.on('uncaughtException', (err, origin) => {
