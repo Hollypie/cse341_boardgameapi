@@ -45,7 +45,7 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 // #swagger.responses[500] = { description: 'Internal server error' }
 router.post(
   '/',
-  requireAuth,
+//   requireAuth,
   (req, res, next) => {
     console.log('--- Incoming POST /games body ---');
     console.log(req.body);
