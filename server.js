@@ -54,8 +54,6 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
     (accessToken, refreshToken, profile, done) => {
-      // For class purposes, just pass user profile object through.
-      // You could save it to Mongo here if you want (User.findOneAndUpdate...)
       return done(null, profile);
     }
   )
