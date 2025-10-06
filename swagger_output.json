@@ -7,6 +7,16 @@
   },
   "host": "cse341-boardgameapi.onrender.com",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "Games",
+      "description": "Game management endpoints"
+    },
+    {
+      "name": "Authentication",
+      "description": "OAuth login/logout endpoints"
+    }
+  ],
   "schemes": [
     "https"
   ],

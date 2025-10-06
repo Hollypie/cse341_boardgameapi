@@ -10,6 +10,16 @@ const doc = {
   },
   host: 'cse341-boardgameapi.onrender.com',
   schemes: ['https'],
+  tags: [
+    {
+      name: 'Games',
+      description: 'Game management endpoints'
+    },
+    {
+      name: 'Authentication',
+      description: 'OAuth login/logout endpoints'
+    }
+  ],
   definitions: {
     Game: {
       title: 'Memoir \'44',
