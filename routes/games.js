@@ -43,7 +43,18 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 // #swagger.responses[201] = { description: 'Game created successfully', schema: { $ref: "#/definitions/Game" } }
 // #swagger.responses[400] = { description: 'Missing required fields' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.post('/', requireAuth, createGameRules(), validate, gamesController.createGame);
+router.post(
+  '/',
+  requireAuth,
+  (req, res, next) => {
+    console.log('--- Incoming POST /games body ---');
+    console.log(req.body);
+    next(); // continue to validation
+  },
+  createGameRules(),
+  validate,
+  gamesController.createGame
+);
 
 /**
  * PUT update a game by ID
