@@ -40,36 +40,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "publisher": {
-                  "example": "any"
-                },
-                "yearPublished": {
-                  "example": "any"
-                },
-                "minPlayers": {
-                  "example": "any"
-                },
-                "maxPlayers": {
-                  "example": "any"
-                },
-                "playTime": {
-                  "example": "any"
-                },
-                "complexity": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Game"
             }
           }
         ],
@@ -111,36 +82,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "publisher": {
-                  "example": "any"
-                },
-                "yearPublished": {
-                  "example": "any"
-                },
-                "minPlayers": {
-                  "example": "any"
-                },
-                "maxPlayers": {
-                  "example": "any"
-                },
-                "playTime": {
-                  "example": "any"
-                },
-                "complexity": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Game"
             }
           }
         ],
@@ -199,36 +141,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "publisher": {
-                  "example": "any"
-                },
-                "yearPublished": {
-                  "example": "any"
-                },
-                "minPlayers": {
-                  "example": "any"
-                },
-                "maxPlayers": {
-                  "example": "any"
-                },
-                "playTime": {
-                  "example": "any"
-                },
-                "complexity": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Game"
             }
           }
         ],
@@ -304,18 +217,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "username": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "reviews": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/User"
             }
           }
         ],
@@ -380,18 +282,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "username": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "reviews": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/User"
             }
           }
         ],
@@ -467,21 +358,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "userId": {
-                  "example": "any"
-                },
-                "gameId": {
-                  "example": "any"
-                },
-                "rating": {
-                  "example": "any"
-                },
-                "comment": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Review"
             }
           }
         ],
@@ -546,21 +423,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "userId": {
-                  "example": "any"
-                },
-                "gameId": {
-                  "example": "any"
-                },
-                "rating": {
-                  "example": "any"
-                },
-                "comment": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Review"
             }
           }
         ],
@@ -689,36 +552,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "publisher": {
-                  "example": "any"
-                },
-                "yearPublished": {
-                  "example": "any"
-                },
-                "minPlayers": {
-                  "example": "any"
-                },
-                "maxPlayers": {
-                  "example": "any"
-                },
-                "playTime": {
-                  "example": "any"
-                },
-                "complexity": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Game"
             }
           }
         ],
@@ -818,8 +652,8 @@
         },
         "reviews": {
           "type": "array",
-          "example": [],
-          "items": {}
+          "items": {},
+          "example": []
         }
       }
     },

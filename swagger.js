@@ -28,27 +28,88 @@ const doc = {
   ],
   definitions: {
     Game: {
-      title: 'Memoir \'44',                // string
-      publisher: 'Days of Wonder',         // string
-      yearPublished: 2004,                 // number
-      minPlayers: 2,                       // number
-      maxPlayers: 2,                       // number
-      playTime: 60,                        // number
-      complexity: 'Medium',                // string
-      genre: 'Wargame, Scenario-based',    // string
-      description: 'A historical WWII board game.', // string
-      reviews: []                           // array
+      type: 'object',
+      properties: {
+        title: {
+          type: 'string',
+          example: 'Memoir \'44'
+        },
+        publisher: {
+          type: 'string',
+          example: 'Days of Wonder'
+        },
+        yearPublished: {
+          type: 'number',
+          example: 2004
+        },
+        minPlayers: {
+          type: 'number',
+          example: 2
+        },
+        maxPlayers: {
+          type: 'number',
+          example: 2
+        },
+        playTime: {
+          type: 'number',
+          example: 60
+        },
+        complexity: {
+          type: 'string',
+          example: 'Medium'
+        },
+        genre: {
+          type: 'string',
+          example: 'Wargame, Scenario-based'
+        },
+        description: {
+          type: 'string',
+          example: 'A historical WWII board game.'
+        },
+        reviews: {
+          type: 'array',
+          items: {},
+          example: []
+        }
+      }
     },
     User: {
-      username: 'holly',
-      email: 'holly@example.com',
-      password: 'securePassword123'
+      type: 'object',
+      properties: {
+        username: {
+          type: 'string',
+          example: 'holly'
+        },
+        email: {
+          type: 'string',
+          example: 'holly@example.com'
+        },
+        password: {
+          type: 'string',
+          example: 'securePassword123'
+        }
+      }
     },
     Review: {
-      userId: '68d539f99abd2a312f714648',
-      gameId: '68d539a09abd2a312f714637',
-      rating: 5,
-      comment: 'Love this game!'
+      type: 'object',
+      properties: {
+        userId: {
+          type: 'string',
+          example: '68d539f99abd2a312f714648'
+        },
+        gameId: {
+          type: 'string',
+          example: '68d539a09abd2a312f714637'
+        },
+        rating: {
+          type: 'number',
+          example: 5
+        },
+        comment: {
+          type: 'string',
+          example: 'Love this game!'
+        }
+      }
     }
   }
 };
