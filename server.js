@@ -119,6 +119,14 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // --- AUTHENTICATION ROUTES ---
 
+// TEMP route to create a session for REST client testing
+app.get('/auth/test-login', (req, res) => {
+  req.login({ displayName: 'Test User', emails: [{ value: 'test@example.com' }] }, err => {
+    if (err) return res.status(500).send('Test login failed');
+    res.send('✅ Test login complete. You can now grab the connect.sid cookie for REST client requests.');
+  });
+});
+
 // Login route
 app.get('/login', (req, res, next) => {
   // #swagger.tags = ['Authentication']
