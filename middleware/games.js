@@ -1,21 +1,4 @@
-const { body, validationResult, param } = require('express-validator')
-
-const userValidationRules = () => {
-  return [
-    body('username').isString(),
-    body('email').isEmail()
-  ]
-}
-
-const reviewValidationRules = () => {
-  return [
-    body('userId').isString(),
-    body('gameId').isString(),
-    body('rating').isNumeric(),
-    body('comment').isString(),
-    body('createdAt').isString()
-  ]
-}
+const { body, param } = require('express-validator')
 
 const createGameRules = () => {
   return [
@@ -46,19 +29,6 @@ const updateGameRules = () => [
 const gameIdParamRules = () => [
     param('id').isMongoId().withMessage('Invalid game ID'),
 ];
-
-const validate = (req, res, next) => {
-  const errors = validationResult(req)
-  if (errors.isEmpty()) {
-    return next()
-  }
-  const extractedErrors = []
-  errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
-
-  return res.status(422).json({
-    errors: extractedErrors,
-  })
-}
 
 module.exports = {
     createGameRules,
