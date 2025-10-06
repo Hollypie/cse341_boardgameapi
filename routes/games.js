@@ -48,7 +48,11 @@ router.post(
   requireAuth,
   (req, res, next) => {
     console.log('--- Incoming POST /games body ---');
-    console.log(req.body);
+      console.log(req.body);
+      
+      console.log('--- Field types ---');
+    Object.keys(req.body).forEach(key => {
+      console.log(`${key}: ${typeof req.body[key]} -> ${req.body[key]}`);
     next(); // continue to validation
   },
   createGameRules(),
