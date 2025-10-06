@@ -29,15 +29,16 @@ router.get('/', gamesController.getAllGames);
 // #swagger.responses[500] = { description: 'Internal server error' }
 router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 
+/**
+ * POST create a new game
+ */
 // #swagger.tags = ['Games']
 // #swagger.description = 'Create a new game.'
 // #swagger.parameters['body'] = {
 //     in: 'body',
 //     description: 'Game information',
 //     required: true,
-//     schema: { 
-//         $ref: "#/definitions/Game" 
-//     },
+//     schema: { $ref: "#/definitions/Game" },
 //     example: {
 //         title: "Test Game",
 //         publisher: "Test Publisher",
@@ -50,24 +51,28 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 //         description: "A sample game for testing."
 //     }
 // }
+// #swagger.responses[201] = { description: 'Game created successfully', schema: { $ref: "#/definitions/Game" } }
+// #swagger.responses[400] = { description: 'Missing required fields' }
+// #swagger.responses[422] = { description: 'Invalid input data' }
+// #swagger.responses[500] = { description: 'Internal server error' }
 router.post(
   '/',
-//   requireAuth,
+  // requireAuth, // Uncomment if authentication is needed
   (req, res, next) => {
     console.log('--- Incoming POST /games body ---');
     console.log(req.body);
-    
+
     console.log('--- Field types ---');
     Object.keys(req.body).forEach(key => {
       console.log(`${key}: ${typeof req.body[key]} -> ${req.body[key]}`);
     });
 
-    next(); // continue to validation AFTER logging all fields
+    next(); // continue to validation
   },
   createGameRules(),
   validate,
   gamesController.createGame
-); 
+);
 
 /**
  * PUT update a game by ID
