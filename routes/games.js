@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const gamesController = require('../controllers/games');
-const { createGameRules, updateGameRules, gameIdParamRules } = require('../middlewear/games.js');
-const { validate } = require('../middlewear/validator.js');
+const { createGameRules, updateGameRules, gameIdParamRules } = require('../middleware/games.js');
+const { validate } = require('../middleware/validator.js');
+const { requireAuth } = require('../middleware/authenticate.js');
 
 /**
  * GET all games
@@ -42,7 +43,7 @@ router.get('/:id', gameIdParamRules(), validate, gamesController.getSingleGame);
 // #swagger.responses[201] = { description: 'Game created successfully', schema: { $ref: "#/definitions/Game" } }
 // #swagger.responses[400] = { description: 'Missing required fields' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.post('/', createGameRules(), validate, gamesController.createGame);
+router.post('/', requireAuth(), createGameRules(), validate, gamesController.createGame);
 
 /**
  * PUT update a game by ID
@@ -60,7 +61,7 @@ router.post('/', createGameRules(), validate, gamesController.createGame);
 // #swagger.responses[400] = { description: 'Invalid ID or missing fields' }
 // #swagger.responses[404] = { description: 'Game not found' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.put('/:id', gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
+router.put('/:id', requireAuth(), gameIdParamRules(), updateGameRules(), validate, gamesController.updateGame);
 
 /**
  * DELETE a game by ID
@@ -72,6 +73,6 @@ router.put('/:id', gameIdParamRules(), updateGameRules(), validate, gamesControl
 // #swagger.responses[404] = { description: 'Game not found' }
 // #swagger.responses[400] = { description: 'Invalid ID format' }
 // #swagger.responses[500] = { description: 'Internal server error' }
-router.delete('/:id', gameIdParamRules(), validate, gamesController.deleteGame);
+router.delete('/:id', requireAuth(), gameIdParamRules(), validate, gamesController.deleteGame);
 
 module.exports = router;

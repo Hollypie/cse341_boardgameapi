@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const reviewsController = require('../controllers/reviews');
-const { createReviewRules, updateReviewRules, reviewIdParamRules } = require('../middlewear/reviews.js');
-const { validate } = require('../middlewear/validator.js');
+const { createReviewRules, updateReviewRules, reviewIdParamRules } = require('../middleware/reviews.js');
+const { validate } = require('../middleware/validator.js');
+const { requireAuth } = require('../middleware/authenticate.js');
 
 /**
  * @route GET /reviews
@@ -33,7 +34,7 @@ router.get('/:id', reviewIdParamRules(), validate, reviewsController.getSingleRe
  * @returns {object} 201 - The created review
  * @returns {Error} 400 - Missing required fields
  */
-router.post('/', createReviewRules(), validate, reviewsController.createReview);
+router.post('/', requireAuth(), createReviewRules(), validate, reviewsController.createReview);
 
 /**
  * @route PUT /reviews/{id}
@@ -49,7 +50,7 @@ router.post('/', createReviewRules(), validate, reviewsController.createReview);
  * @returns {Error} 400 - Invalid ID or missing fields
  * @returns {Error} 404 - Review not found
  */
-router.put('/:id', reviewIdParamRules(), updateReviewRules(), validate, reviewsController.updateReview);
+router.put('/:id', requireAuth(), reviewIdParamRules(), updateReviewRules(), validate, reviewsController.updateReview);
 
 /**
  * @route DELETE /reviews/{id}
@@ -60,6 +61,6 @@ router.put('/:id', reviewIdParamRules(), updateReviewRules(), validate, reviewsC
  * @returns {Error} 400 - Invalid ID
  * @returns {Error} 404 - Review not found
  */
-router.delete('/:id', reviewIdParamRules(), validate, reviewsController.deleteReview);
+router.delete('/:id', requireAuth(), reviewIdParamRules(), validate, reviewsController.deleteReview);
 
 module.exports = router;
