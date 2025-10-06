@@ -51,9 +51,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL:
-        process.env.GOOGLE_CALLBACK_URL ||
-        'http://localhost:8080/auth/google/callback',
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
     (accessToken, refreshToken, profile, done) => {
       // For class purposes, just pass user profile object through.
