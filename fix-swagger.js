@@ -146,14 +146,19 @@ function fixBodyParameters(paths) {
       
       if (endpoint.parameters) {
         endpoint.parameters.forEach(param => {
-          if (param.in === 'body' && param.schema && param.schema.properties) {
-            // Determine which definition to use based on tags, path, and method
-            const props = Object.keys(param.schema.properties);
+          if (param.in === 'body' && param.schema) {
+            const props = param.schema.properties ? Object.keys(param.schema.properties) : [];
             const tags = endpoint.tags || [];
             
-            // Check if endpoint is tagged with 'Newgame'
-            if (tags.includes('Newgame')) {
+            // Specific path and method checks for PUT /games/{id}
+            if (path === '/games/{id}' && method === 'put') {
               param.schema = { $ref: '#/definitions/Newgame' };
+              console.log('✓ Applied Newgame schema to PUT /games/{id}');
+            }
+            // Check if endpoint is tagged with 'Newgame'
+            else if (tags.includes('Newgame')) {
+              param.schema = { $ref: '#/definitions/Newgame' };
+              console.log(`✓ Applied Newgame schema to ${method.toUpperCase()} ${path}`);
             }
             // Check for game-related properties
             else if (props.includes('title') && props.includes('publisher')) {
@@ -179,7 +184,6 @@ fixBodyParameters(swagger.paths);
 
 // Write the corrected swagger back to file
 fs.writeFileSync(swaggerFile, JSON.stringify(swagger, null, 2));
-console.log('✅ Swagger file fixed successfully!');
+console.log('\n✅ Swagger file fixed successfully!');
 console.log('- Corrected malformed definitions');
 console.log('- Replaced body parameters with schema references');
-console.log('- Applied Newgame schema to PUT /games/{id}');
