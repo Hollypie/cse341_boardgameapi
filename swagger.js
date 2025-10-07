@@ -1,4 +1,5 @@
 const swaggerAutogen = require('swagger-autogen')();
+const { execSync } = require('child_process');
 
 const outputFile = './swagger_output.json';
 const endpointsFiles = [
@@ -18,144 +19,28 @@ const doc = {
   schemes: ['https'],
   tags: [
     {
+      name: 'Games',
+      description: 'Game management endpoints'
+    },
+    {
+      name: 'Newgame',
+      description: 'Updated game example for PUT operations'
+    },
+    {
       name: 'Authentication',
       description: 'OAuth login/logout endpoints'
     }
-  ],
-  definitions: {
-    Game: {
-      type: 'object',
-      properties: {
-        title: {
-          type: 'string',
-          example: 'Memoir \'44'
-        },
-        publisher: {
-          type: 'string',
-          example: 'Days of Wonder'
-        },
-        yearPublished: {
-          type: 'number',
-          example: 2004
-        },
-        minPlayers: {
-          type: 'number',
-          example: 2
-        },
-        maxPlayers: {
-          type: 'number',
-          example: 2
-        },
-        playTime: {
-          type: 'number',
-          example: 60
-        },
-        complexity: {
-          type: 'string',
-          example: 'Medium'
-        },
-        genre: {
-          type: 'string',
-          example: 'Wargame, Scenario-based'
-        },
-        description: {
-          type: 'string',
-          example: 'A historical WWII board game.'
-        },
-        reviews: {
-          type: 'array',
-          items: {},
-          example: []
-        }
-      }
-    },
-    Newgame: {
-      type: 'object',
-      properties: {
-        title: {
-          type: 'string',
-          example: 'Monopoly'
-        },
-        publisher: {
-          type: 'string',
-          example: 'unknown'
-        },
-        yearPublished: {
-          type: 'number',
-          example: 1930
-        },
-        minPlayers: {
-          type: 'number',
-          example: 2
-        },
-        maxPlayers: {
-          type: 'number',
-          example: 5
-        },
-        playTime: {
-          type: 'number',
-          example: 200
-        },
-        complexity: {
-          type: 'string',
-          example: 'Easy'
-        },
-        genre: {
-          type: 'string',
-          example: 'economy'
-        },
-        description: {
-          type: 'string',
-          example: 'The worst board game.'
-        },
-        reviews: {
-          type: 'array',
-          items: {},
-          example: []
-        }
-      }
-    },
-    User: {
-      type: 'object',
-      properties: {
-        username: {
-          type: 'string',
-          example: 'holly'
-        },
-        email: {
-          type: 'string',
-          example: 'holly@example.com'
-        },
-        password: {
-          type: 'string',
-          example: 'securePassword123'
-        }
-      }
-    },
-    Review: {
-      type: 'object',
-      properties: {
-        userId: {
-          type: 'string',
-          example: '68d539f99abd2a312f714648'
-        },
-        gameId: {
-          type: 'string',
-          example: '68d539a09abd2a312f714637'
-        },
-        rating: {
-          type: 'number',
-          example: 5
-        },
-        comment: {
-          type: 'string',
-          example: 'Love this game!'
-        }
-      }
-    }
-  }
+  ]
+  // Don't define schemas here - they're defined in fix-swagger.js
 };
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
   console.log('Swagger documentation generated successfully!');
+  
+  // Run the fix script
+  try {
+    execSync('node fix-swagger.js', { stdio: 'inherit' });
+  } catch (error) {
+    console.error('Error fixing swagger:', error);
+  }
 });
