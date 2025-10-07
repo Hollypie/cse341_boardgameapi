@@ -148,7 +148,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/Game"
+              "$ref": "#/definitions/Newgame"
             }
           }
         ],
