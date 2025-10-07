@@ -101,7 +101,7 @@ router.post(
  * @swagger
  * /games/{id}:
  *   put:
- *     tags: [Games]
+ *     tags: [Newgame]
  *     description: Update an existing game.
  *     parameters:
  *       - name: id

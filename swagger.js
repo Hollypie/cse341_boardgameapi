@@ -69,6 +69,52 @@ const doc = {
         }
       }
     },
+    Newgame: {
+      type: 'object',
+      properties: {
+        title: {
+          type: 'string',
+          example: 'Monopoly'
+        },
+        publisher: {
+          type: 'string',
+          example: 'unknown'
+        },
+        yearPublished: {
+          type: 'number',
+          example: 1930
+        },
+        minPlayers: {
+          type: 'number',
+          example: 2
+        },
+        maxPlayers: {
+          type: 'number',
+          example: 5
+        },
+        playTime: {
+          type: 'number',
+          example: 200
+        },
+        complexity: {
+          type: 'string',
+          example: 'Easy'
+        },
+        genre: {
+          type: 'string',
+          example: 'economy'
+        },
+        description: {
+          type: 'string',
+          example: 'The worst board game.'
+        },
+        reviews: {
+          type: 'array',
+          items: {},
+          example: []
+        }
+      }
+    },
     User: {
       type: 'object',
       properties: {
