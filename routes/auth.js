@@ -2,14 +2,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-// routes/auth.js
-router.get('/', (req, res) => {
-  res.send(`
-    <h1>Welcome to Board Game API</h1>
-    <p><a href="/login">Log in with Google</a></p>
-  `);
-});
-
 // Login route
 router.get('/login', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
