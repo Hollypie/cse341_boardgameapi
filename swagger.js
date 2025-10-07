@@ -18,10 +18,6 @@ const doc = {
   schemes: ['https'],
   tags: [
     {
-      name: 'Games',
-      description: 'Game management endpoints'
-    },
-    {
       name: 'Authentication',
       description: 'OAuth login/logout endpoints'
     }
